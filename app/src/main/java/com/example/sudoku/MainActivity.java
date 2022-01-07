@@ -144,3 +144,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         player1Turn = savedInstanceState.getBoolean("player1Turn");
     }
 }
+/*
+TODO: Buttons auf 9x9 erweitern (Krebs)
+TODO: 9 Buttons für Auswahl der Zahlen (1x9 oder 3x3? -> testen)
+TODO: Zahlen in jeweils 3 Arrays speichern (Row + Column + 3x3 Area)
+TODO: doppelte Zahlen markieren
+TODO: Sudoku Test (einfach dank Arrays)
+TODO: schick machen (optional)
+TODO: Sudoku Generator (optional)
+TODO: Sudokus erstellen und teilen (optional)
+TODO: Hilfe (optional)
+ */
