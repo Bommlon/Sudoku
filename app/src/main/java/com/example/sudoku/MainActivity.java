@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 }
 /*
-TODO: Buttons auf 9x9 erweitern (Krebs)
+TODO: Buttons (9x9) anpassen
 TODO: 9 Buttons für Auswahl der Zahlen (1x9 oder 3x3? -> testen)
 TODO: Zahlen in jeweils 3 Arrays speichern (Row + Column + 3x3 Area)
 TODO: doppelte Zahlen markieren
