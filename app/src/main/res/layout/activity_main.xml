@@ -47,6 +47,7 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/linear_00"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -59,12 +60,13 @@
 
             <Button
                 android:id="@+id/button_00"
-                 style="@style/Widget.AppCompat.Button.Borderless"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -75,6 +77,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -85,6 +88,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -95,6 +99,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -105,6 +110,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -115,6 +121,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -125,6 +132,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -135,6 +143,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -145,6 +154,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -161,6 +171,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -171,6 +182,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -181,6 +193,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -191,6 +204,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -201,6 +215,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -211,6 +226,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -221,6 +237,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -231,6 +248,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -241,6 +259,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -257,6 +276,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -267,6 +287,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -277,6 +298,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -287,6 +309,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -297,6 +320,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -307,6 +331,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -317,6 +342,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -327,6 +353,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -337,6 +364,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -353,6 +381,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -363,6 +392,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -373,6 +403,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -383,6 +414,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -393,6 +425,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -403,6 +436,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -413,6 +447,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -423,6 +458,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -433,6 +469,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -449,6 +486,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -459,6 +497,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -469,6 +508,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -479,6 +519,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -489,6 +530,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -499,6 +541,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -509,6 +552,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -519,6 +563,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -529,6 +574,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -545,6 +591,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -555,6 +602,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -565,6 +613,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -575,6 +624,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -585,6 +635,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -595,6 +646,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -605,6 +657,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -615,6 +668,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -625,6 +679,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -641,6 +696,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -651,6 +707,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -661,6 +718,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -671,6 +729,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -681,6 +740,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -691,6 +751,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -701,6 +762,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -711,6 +773,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -721,6 +784,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -737,6 +801,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -747,6 +812,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -757,6 +823,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -767,6 +834,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -777,6 +845,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -787,6 +856,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -797,6 +867,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -807,6 +878,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -817,6 +889,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -833,6 +906,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -843,6 +917,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -853,6 +928,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -863,6 +939,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -873,6 +950,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -883,6 +961,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -893,6 +972,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -903,6 +983,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <Button
@@ -913,6 +994,7 @@
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
