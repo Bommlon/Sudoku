@@ -59,65 +59,92 @@
 
             <Button
                 android:id="@+id/button_00"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_01"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_02"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_03"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_04"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_05"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_06"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_07"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_08"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -128,65 +155,92 @@
 
             <Button
                 android:id="@+id/button_10"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_11"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_12"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_13"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_14"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_15"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_16"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_17"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_18"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -197,65 +251,92 @@
 
             <Button
                 android:id="@+id/button_20"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_21"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_22"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_23"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_24"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_25"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_26"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_27"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_28"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -266,65 +347,92 @@
 
             <Button
                 android:id="@+id/button_30"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_31"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_32"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_33"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_34"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_35"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_36"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_37"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_38"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -335,65 +443,92 @@
 
             <Button
                 android:id="@+id/button_40"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_41"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_42"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_43"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_44"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_45"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_46"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_47"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_48"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -404,65 +539,92 @@
 
             <Button
                 android:id="@+id/button_50"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_51"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_52"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_53"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_54"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_55"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_56"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_57"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_58"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -473,65 +635,92 @@
 
             <Button
                 android:id="@+id/button_60"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_61"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_62"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_63"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_64"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_65"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_66"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_67"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_68"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -542,65 +731,92 @@
 
             <Button
                 android:id="@+id/button_70"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_71"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_72"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_73"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_74"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_75"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_76"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_77"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_78"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -611,65 +827,92 @@
 
             <Button
                 android:id="@+id/button_80"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_81"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_82"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_83"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_84"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_85"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_86"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_87"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
 
             <Button
                 android:id="@+id/button_88"
+                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:insetTop="0"
+                android:insetBottom="0"
                 android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
