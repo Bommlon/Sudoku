@@ -1,27 +1,25 @@
 package com.example.sudoku;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button[][] buttons = new Button[9][9];
-    //private boolean player1Turn = true;
-    private int roundCount;
-    //private int player1Points;
-    //private int player2Points;
-    //private TextView textViewPlayer1;
-    //private TextView textViewPlayer2;
     private int selectedNum;
+    private int roundCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //textViewPlayer1 = findViewById(R.id.text_view_p1);
-        //textViewPlayer2 = findViewById(R.id.text_view_p2);
+        LinearLayout linearLayout = findViewById(R.id.linear_00);
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 String buttonID = "button_" + i + j;
@@ -37,34 +35,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 resetGame();
             }
         });
+        RadioGroup radioGroup = findViewById(R.id.radio_group);
+        radioGroup.check(R.id.radio_00);
+        selectedNum = 1;
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                int id = radioGroup.getCheckedRadioButtonId();
+                RadioButton radioButton = findViewById(id);
+                selectedNum = Integer.parseInt(radioButton.getText().toString());
+                System.out.println(selectedNum);
+            }
+        });
+        ViewGroup.LayoutParams linearParams = linearLayout.getLayoutParams();
+        ViewGroup.LayoutParams radioParams = radioGroup.getLayoutParams();
+        int screenWidth = radioParams.width;
+        System.out.println("width: "+screenWidth);
+        linearParams.height = screenWidth*2;
+        linearLayout.setLayoutParams(linearParams);
     }
     @Override
     public void onClick(View v) {
-        if (!((Button) v).getText().toString().equals("")) {
-            return;
-        }
-        /*
-        if (player1Turn) {
-            ((Button) v).setText("X");
-        } else {
-            ((Button) v).setText("O");
-        }
-        */
+        ((Button) v).setText(Integer.toString(selectedNum));
         roundCount++;
         if (checkForWin()) {
-            /*
-            if (player1Turn) {
-                playerWins();
-            } else {
-                player2Wins();
-            }
-             */
-        } else if (roundCount == 81) {
-            draw();
-        } else {
-            //player1Turn = !player1Turn;
+            //TODO: what happens when the player wins
         }
     }
+
     private boolean checkForWin() { //TODO: an Sudoku anpassen
         String[][] field = new String[9][9];
         for (int i = 0; i < 9; i++) {
@@ -114,16 +112,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetBoard();
     }
      */
-    private void draw() {
-        Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
-        resetBoard();
-    }
-    /*
-    private void updatePointsText() {
-        textViewPlayer1.setText("Player 1: " + player1Points);
-        textViewPlayer2.setText("Player 2: " + player2Points);
-    }
-     */
     private void resetBoard() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
@@ -139,6 +127,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //updatePointsText();
         resetBoard();
     }
+
+    private int[][] generateSudoku(){
+        int[][] sudoku = new int[9][9];
+
+    }
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {   //this is what happens when the app closes TODO: an Sudoku anpassen
         super.onSaveInstanceState(outState);

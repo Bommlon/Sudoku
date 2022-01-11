@@ -67,7 +67,8 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:textColor="#000000"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:strokeColor="#000000" />
 
             <Button
                 android:id="@+id/button_01"
