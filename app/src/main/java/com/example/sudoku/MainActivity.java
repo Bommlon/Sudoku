@@ -10,10 +10,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private SudokuGenerator sudokuGenerator = new SudokuGenerator();
     private Button[][] buttons = new Button[9][9];
     private int selectedNum;
     private int roundCount;
+    private int[][] rows = new int[9][9];
+    private int[][] columns = new int[9][9];
+    private int[][] blocks = new int[9][9];
+
+    public MainActivity() throws IOException {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +63,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         System.out.println("width: "+screenWidth);
         linearParams.height = screenWidth*2;
         linearLayout.setLayoutParams(linearParams);
+        generateSudoku();
     }
     @Override
     public void onClick(View v) {
         ((Button) v).setText(Integer.toString(selectedNum));
+        System.out.println(((Button) v).getTag().toString());
         roundCount++;
         if (checkForWin()) {
             //TODO: what happens when the player wins
@@ -64,40 +76,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private boolean checkForWin() { //TODO: an Sudoku anpassen
-        String[][] field = new String[9][9];
+        int[][] field = new int[9][9];
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                field[i][j] = buttons[i][j].getText().toString();
+                if(buttons[i][j].getText().toString().equals("")) return false;
+                field[i][j] = Integer.parseInt(buttons[i][j].getText().toString());
             }
         }
-        /*
-        for (int i = 0; i < 9; i++) {
-            if (field[i][0].equals(field[i][1])
-                    && field[i][0].equals(field[i][2])
-                    && !field[i][0].equals("")) {
-                return true;
+        // check rows
+        for (int i = 0; i < 9; i++){
+            if(containsDuplicates(field[i])){
+                return false;
             }
         }
-        for (int i = 0; i < 9; i++) {
-            if (field[0][i].equals(field[1][i])
-                    && field[0][i].equals(field[2][i])
-                    && !field[0][i].equals("")) {
-                return true;
+        // check columns
+        for (int i = 0; i < 9; i++){
+            if(containsDuplicates(field[i])){
+                return false;
             }
         }
-        if (field[0][0].equals(field[1][1])
-                && field[0][0].equals(field[2][2])
-                && !field[0][0].equals("")) {
-            return true;
-        }
-        if (field[0][2].equals(field[1][1])
-                && field[0][2].equals(field[2][0])
-                && !field[0][2].equals("")) {
-            return true;
-        }
-         */
+
         return false;
     }
+
+    private boolean containsDuplicates(int[] numbers){
+        for (int index = 0; index < numbers.length; index++) {
+            int absIndex = Math.abs(numbers[index]);
+
+            if (numbers[absIndex] < 0) {
+                return true;
+
+            } else {
+                numbers[absIndex] = -numbers[absIndex];
+            }
+        }
+        return false;
+    }
+
     private void playerWins() {
         //player1Points++;
         Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
@@ -115,9 +130,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void resetBoard() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                buttons[i][j].setText("");
+                buttons[i][j].setClickable(true);
             }
         }
+        generateSudoku();
         roundCount = 0;
         //player1Turn = true;
     }
@@ -128,9 +144,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetBoard();
     }
 
-    private int[][] generateSudoku(){
+    private void generateSudoku(){
         int[][] sudoku = new int[9][9];
-
+        sudoku = sudokuGenerator.generate(sudoku);
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                String temp = Integer.toString(sudoku[i][j]);
+                buttons[i][j].setText(temp);
+                if (temp.equals("0")){
+                    buttons[i][j].setText("");
+                }
+                else {
+                    buttons[i][j].setClickable(false);
+                }
+            }
+        }
     }
 
     @Override
