@@ -69,28 +69,21 @@ public class SudokuGenerator {
         int k1, k2, max = 2, min = 0;
         Random r = new Random();
         for (int i = 0; i < 3; i++) {
-            // There are three groups.So we are using for loop three times.
             k1 = r.nextInt(max - min + 1) + min;
-            // This while is just to ensure k1 is not equal to k2.
             do {
                 k2 = r.nextInt(max - min + 1) + min;
             } while (k1 == k2);
             max += 3;
             min += 3;
-            // check is global variable.
-            // We are calling random_gen two time from the main func.
-            // Once it will be called for columns and once for rows.
             if (check == 1)
-                // calling a function to interchange the selected rows.
                 permutation_row(k1, k2);
             else if (check == 0)
                 permutation_col(k1, k2);
         }
     }
 
-    // For row
     public static void permutation_row(int k1, int k2) {
-        int temp;// k1 and k2 are two rows that we are selecting to interchange.
+        int temp;
         for (int j = 0; j < 9; j++) {
             temp = a[k1][j];
             a[k1][j] = a[k2][j];
