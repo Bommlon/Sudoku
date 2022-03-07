@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_text_app_name">30sp</dimen>
+    <dimen name="size_text_but_reset">15sp</dimen>
+    <dimen name="size_text_but_grid">15sp</dimen>
+    <dimen name="size_text_radio_selector">20sp</dimen>
+</resources>
