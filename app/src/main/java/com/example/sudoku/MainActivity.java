@@ -1,5 +1,6 @@
 package com.example.sudoku;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,17 +12,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
 
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private SudokuGenerator sudokuGenerator = new SudokuGenerator();
     private Button[][] buttons = new Button[9][9];
     private int selectedNum;
     private int roundCount; // number of games won
+    private HashMap<Button,Button> errorPairs = new HashMap<Button,Button>();
     private int[][] rows = new int[9][9];
     private int[][] columns = new int[9][9];
     private int[][] blocks = new int[9][9];
@@ -128,21 +133,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < 9; i++){
             if (containsDuplicates(rows[i])){
                 System.out.println(Arrays.toString(rows[i]));
+                System.out.println(Arrays.toString(containedDuplicate(rows[i])));
 
-                for (int j = 0; j < 9; j++){
-                    buttons[i][j].setTextColor(Color.RED);
-                }
-                //if (b.getResources().getResourceEntryName(b.getId()).charAt(7) - '0' == i) b.setTextColor(Color.RED);
                 noduplicates = false;
             }
+            /*
+            else{
+                for (int j = 0; j < 9; j++){
+                    buttons[i][j].setTextColor(Color.BLACK);
+                }
+            }
+
+             */
         }
         // check columns
         System.out.println("checking columns");
         for (int i = 0; i < 9; i++){
             if (containsDuplicates(columns[i])){
                 System.out.println(Arrays.toString(columns[i]));
+
+                for (int j = 0; j < 9; j++){
+                    buttons[j][i].setTextColor(Color.RED);
+                }
                 noduplicates = false;
             }
+            /*
+            else{
+                for (int j = 0; j < 9; j++){
+                    buttons[j][i].setTextColor(Color.BLACK);
+                }
+            }
+
+             */
         }
         // check blocks
         System.out.println("checking blocks");
@@ -152,6 +174,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 noduplicates = false;
             }
         }
+
         if (isfilled && noduplicates){
             roundCount++;
             return true;
@@ -171,6 +194,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return false;
     }
 
+    // new fancy duplicate finder
+    private int[] containedDuplicate(int[] numbers){
+        LinkedList<Integer> nums = new LinkedList<Integer>();
+        int[] res = new int[2];
+        for (int i:numbers) nums.add(i);
+        int testloc = 0;
+        while (nums.size() > 0){
+            int test = nums.getFirst();
+            nums.removeFirst();
+            testloc++;
+            if (nums.contains(test)){
+                res[0] = testloc - 1;
+                res[1] = testloc + nums.indexOf(test);
+                return res;
+            }
+        }
+        return null;
+    }
+
     private void playerWins() {
         Toast.makeText(this, "nice work!", Toast.LENGTH_LONG).show();
         resetBoard();
@@ -180,6 +222,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 buttons[i][j].setClickable(true);
+                buttons[i][j].setTextColor(Color.BLACK);
+                buttons[i][j].setTypeface(buttons[i][j].getTypeface(), Typeface.NORMAL);
             }
         }
         generateSudoku();
@@ -199,6 +243,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 else {
                     buttons[row][column].setClickable(false);
+                    buttons[row][column].setTypeface(buttons[row][column].getTypeface(), Typeface.BOLD_ITALIC);
                 }
             }
         }
