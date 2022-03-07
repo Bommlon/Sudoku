@@ -5,24 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.sudoku.MainActivity">
+
+    <!--  header   -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <!--
-        <TextView
-            android:id="@+id/text_view_p1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Player 1: 0"
-            android:textSize="30sp" />
-        <TextView
-            android:id="@+id/text_view_p2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_view_p1"
-            android:text="Player 2: 0"
-            android:textSize="30sp" />
-        -->
+
         <TextView
             android:id="@+id/text_view_s1"
             android:layout_width="wrap_content"
@@ -44,22 +32,17 @@
             android:text="reset"
             android:layout_marginBottom="50dp"/>
     </RelativeLayout>
-    <!--
-    <GridView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/gridview"
-        android:numColumns="9"/>
-    -->
 
+    <!--  sudoku grid   -->
     <LinearLayout
         android:id="@+id/linear_00"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="100dp"
         android:layout_weight="1"
         android:background="@drawable/gridsudoku"
         android:orientation="vertical">
 
+        <!--  first row   -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -166,6 +149,7 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <!--  second row   -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -271,6 +255,7 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <!--  third row   -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -376,6 +361,7 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <!--  fourth row   -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -481,6 +467,7 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <!--  fivth row   -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -586,6 +573,7 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <!--  sixth row   -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -691,6 +679,7 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <!--  seventh row   -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -796,6 +785,7 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <!--  eighth row   -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -901,6 +891,7 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+        <!--  ninth row   -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -1007,6 +998,8 @@
                 android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
+
+    <!--  number selector  -->
     <RadioGroup
         android:id="@+id/radio_group"
         android:layout_width="match_parent"
@@ -1078,5 +1071,4 @@
             android:text="9"
             android:textSize="20sp"/>
     </RadioGroup>
-
 </LinearLayout>
