@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      3 | 4 | 5      678
     ---+---+---
      6 | 7 | 8
+
+     buttons[down][across]
      */
 
     public MainActivity() throws IOException {
@@ -121,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private boolean checkForWin() {
         // check if filled
         boolean isfilled = true;
-        boolean noduplicates = true;
+        int[] dupe;
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if(buttons[i][j].getText().toString().equals("")) isfilled = false;
@@ -131,54 +133,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // check rows
         System.out.println("checking rows");
         for (int i = 0; i < 9; i++){
-            if (containsDuplicates(rows[i])){
-                System.out.println(Arrays.toString(rows[i]));
-                System.out.println(Arrays.toString(containedDuplicate(rows[i])));
-
-                noduplicates = false;
+            dupe = containedDuplicate(rows[i]);
+            if(dupe != null){
+                System.out.println("row" + i + " " + Arrays.toString(dupe));
+                errorPairs.put(buttons[i][dupe[0]], buttons[i][dupe[1]]);
             }
-            /*
-            else{
-                for (int j = 0; j < 9; j++){
-                    buttons[i][j].setTextColor(Color.BLACK);
-                }
-            }
-
-             */
         }
         // check columns
         System.out.println("checking columns");
         for (int i = 0; i < 9; i++){
-            if (containsDuplicates(columns[i])){
-                System.out.println(Arrays.toString(columns[i]));
-
-                for (int j = 0; j < 9; j++){
-                    buttons[j][i].setTextColor(Color.RED);
-                }
-                noduplicates = false;
+            dupe = containedDuplicate(columns[i]);
+            if(dupe != null){
+                System.out.println("column" + i + " " + Arrays.toString(dupe));
+                errorPairs.put(buttons[dupe[0]][i], buttons[dupe[1]][i]);
             }
-            /*
-            else{
-                for (int j = 0; j < 9; j++){
-                    buttons[j][i].setTextColor(Color.BLACK);
-                }
-            }
-
-             */
         }
         // check blocks
         System.out.println("checking blocks");
         for (int i = 0; i < 9; i++){
-            if (containsDuplicates(blocks[i])){
-                System.out.println(Arrays.toString(blocks[i]));
-                noduplicates = false;
+            dupe = containedDuplicate(blocks[i]);
+            if(dupe != null){
+                System.out.println("block" + i + " " + Arrays.toString(dupe));
+                int tempCol = (i % 3) * 3;
+                int tempRow = (i / 3) * 3;
+
+                int colErr0 = tempCol + ((dupe[0] % 3));
+                int rowErr0 = tempRow + ((dupe[0] / 3));
+                int colErr1 = tempCol + ((dupe[1] % 3));
+                int rowErr1 = tempRow + ((dupe[1] / 3));
+
+                System.out.println(tempCol +" "+ tempRow +" | "+ colErr0 +" "+ rowErr0 +" "+ colErr1 +" "+ rowErr1);
+                errorPairs.put(buttons[rowErr0][colErr0], buttons[rowErr1][colErr1]);
             }
         }
 
-        if (isfilled && noduplicates){
+        if (isfilled && errorPairs.isEmpty()){
             roundCount++;
             return true;
         }
+        markErrors();
         return false;
     }
 
@@ -204,13 +197,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             int test = nums.getFirst();
             nums.removeFirst();
             testloc++;
-            if (nums.contains(test)){
+            if (nums.contains(test) && (test > 0)){
                 res[0] = testloc - 1;
                 res[1] = testloc + nums.indexOf(test);
                 return res;
             }
         }
         return null;
+    }
+
+    private void markErrors(){
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                buttons[i][j].setTextColor(Color.BLACK);
+            }
+        }
+        for (Button b : errorPairs.keySet()) b.setTextColor(Color.RED);
+        for (Button b : errorPairs.values()) b.setTextColor(Color.RED);
+        errorPairs.clear();
     }
 
     private void playerWins() {
@@ -223,9 +227,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             for (int j = 0; j < 9; j++) {
                 buttons[i][j].setClickable(true);
                 buttons[i][j].setTextColor(Color.BLACK);
+                buttons[i][j].setTextSize(15);
                 buttons[i][j].setTypeface(buttons[i][j].getTypeface(), Typeface.NORMAL);
             }
         }
+        System.out.println("\n============= RESET =============\n\n");
         generateSudoku();
     }
 
@@ -243,7 +249,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 else {
                     buttons[row][column].setClickable(false);
-                    buttons[row][column].setTypeface(buttons[row][column].getTypeface(), Typeface.BOLD_ITALIC);
+                    buttons[row][column].setTypeface(buttons[row][column].getTypeface(), Typeface.BOLD);
+                    buttons[row][column].setTextSize(19);
                 }
             }
         }
