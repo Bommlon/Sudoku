@@ -175,19 +175,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return false;
     }
 
-    private boolean containsDuplicates(int[] numbers){
-        for (int i = 0; i < numbers.length; i++) {
-            for (int j = i + 1 ; j < numbers.length; j++) {
-                if ((numbers[i] != 0) && (numbers[j] != 0) && (numbers[i] == (numbers[j]))) {
-                    // got the duplicate elements
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    // new fancy duplicate finder
     private int[] containedDuplicate(int[] numbers){
         LinkedList<Integer> nums = new LinkedList<Integer>();
         int[] res = new int[2];
