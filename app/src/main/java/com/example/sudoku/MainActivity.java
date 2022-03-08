@@ -102,8 +102,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (blockRow == 2) tinyBlockRow -= 6;
         int tinyBlockNum = tinyBlockColumn + (3 * tinyBlockRow);
         blocks[blockNum][tinyBlockNum] = value;
-
-        //System.out.println("value: " + value + ", column: " + columnNum + ", row: " + rowNum + ", block: " + blockNum + ", block pos: " + tinyBlockNum);
     }
 
     private boolean checkForWin() {
@@ -230,20 +228,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {   //this is what happens when the app closes TODO: an Sudoku anpassen
+    protected void onSaveInstanceState(@NonNull Bundle outState) {   //this is what happens when the app closes
         super.onSaveInstanceState(outState);
         outState.putInt("roundCount", roundCount);
-        //outState.putInt("player1Points", player1Points);
-        //outState.putInt("player2Points", player2Points);
-        //outState.putBoolean("player1Turn", player1Turn);
+        outState.putIntArray("row0", rows[0]);
+        outState.putIntArray("row1", rows[1]);
+        outState.putIntArray("row2", rows[2]);
+        outState.putIntArray("row3", rows[3]);
+        outState.putIntArray("row4", rows[4]);
+        outState.putIntArray("row5", rows[5]);
+        outState.putIntArray("row6", rows[6]);
+        outState.putIntArray("row7", rows[7]);
+        outState.putIntArray("row8", rows[8]);
+        System.out.println("saved");
     }
     @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {  //this is what happens when the app opens TODO: an Sudoku anpassen
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {  //this is what happens when the app opens
         super.onRestoreInstanceState(savedInstanceState);
         roundCount = savedInstanceState.getInt("roundCount");
-        //player1Points = savedInstanceState.getInt("player1Points");
-        //player2Points = savedInstanceState.getInt("player2Points");
-        //player1Turn = savedInstanceState.getBoolean("player1Turn");
+        rows[0] = savedInstanceState.getIntArray("row0");
+        rows[1] = savedInstanceState.getIntArray("row1");
+        rows[2] = savedInstanceState.getIntArray("row2");
+        rows[3] = savedInstanceState.getIntArray("row3");
+        rows[4] = savedInstanceState.getIntArray("row4");
+        rows[5] = savedInstanceState.getIntArray("row5");
+        rows[6] = savedInstanceState.getIntArray("row6");
+        rows[7] = savedInstanceState.getIntArray("row7");
+        rows[8] = savedInstanceState.getIntArray("row8");
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                placeNum(rows[i][j], i, j);
+            }
+        }
+        System.out.println("reloaded");
     }
 }
 /*
@@ -252,7 +269,7 @@ DONE: Zahlen in jeweils 3 Arrays speichern (Row + Column + 3x3 Area)
 DONE: doppelte Zahlen markieren
 DONE: Sudoku Test (einfach dank Arrays)
 TODO: Sudoku Generator
-TODO: save und reload implementieren
+TODO: save und reload an Sudoku anpassen
 TODO: schick machen (optional)
 TODO: Sudokus erstellen und teilen (optional)
 TODO: Hilfe (optional)
