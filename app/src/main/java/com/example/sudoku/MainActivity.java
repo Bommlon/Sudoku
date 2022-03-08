@@ -1,35 +1,29 @@
 package com.example.sudoku;
+
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.view.ViewCompat;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private SudokuGenerator sudokuGenerator = new SudokuGenerator();
-    private Button[][] buttons = new Button[9][9];
+    private final Button[][] buttons = new Button[9][9];
+    private final HashMap<Button,Button> errorPairs = new HashMap<>();
+    private final int[][] rows = new int[9][9];
+    private final int[][] columns = new int[9][9];
+    private final int[][] blocks = new int[9][9];
     private int selectedNum;
     private int roundCount; // number of games won
-    private HashMap<Button,Button> errorPairs = new HashMap<Button,Button>();
-    private int[][] rows = new int[9][9];
-    private int[][] columns = new int[9][9];
-    private int[][] blocks = new int[9][9];
     /*
     Block IDs:
      0 | 1 | 2      012
@@ -38,17 +32,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ---+---+---
      6 | 7 | 8
 
-     buttons[down][across]
+     buttons[row][column]
      */
 
-    public MainActivity() throws IOException {
+    public MainActivity() {
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LinearLayout linearLayout = findViewById(R.id.linear_00);
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 String buttonID = "button_" + i + j;
@@ -58,26 +51,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         Button buttonReset = findViewById(R.id.button_reset);
-        buttonReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resetBoard();
-            }
-        });
+        buttonReset.setOnClickListener(v -> resetBoard());
         RadioGroup radioGroup = findViewById(R.id.radio_group);
         radioGroup.check(R.id.radio_00);
         selectedNum = 1;
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                int id = radioGroup.getCheckedRadioButtonId();
-                RadioButton radioButton = findViewById(id);
-                selectedNum = Integer.parseInt(radioButton.getText().toString());
-                System.out.println(selectedNum);
-            }
+        radioGroup.setOnCheckedChangeListener((radioGroup1, i) -> {
+            int id = radioGroup1.getCheckedRadioButtonId();
+            RadioButton radioButton = findViewById(id);
+            selectedNum = Integer.parseInt(radioButton.getText().toString());
+            System.out.println(selectedNum);
         });
         /*
         // change height of grid
+        LinearLayout linearLayout = findViewById(R.id.linear_00);
         ViewGroup.LayoutParams linearParams = linearLayout.getLayoutParams();
         ViewGroup.LayoutParams radioParams = radioGroup.getLayoutParams();
         int screenWidth = radioParams.width;
@@ -176,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private int[] containedDuplicate(int[] numbers){
-        LinkedList<Integer> nums = new LinkedList<Integer>();
+        LinkedList<Integer> nums = new LinkedList<>();
         int[] res = new int[2];
         for (int i:numbers) nums.add(i);
         int testloc = 0;
@@ -224,7 +210,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void generateSudoku(){
         int[][] sudoku = new int[9][9];
-        sudoku = sudokuGenerator.generate(sudoku);
+        sudoku = SudokuGenerator.generate(sudoku);
         for (int row = 0; row < 9; row++) {
             for (int column = 0; column < 9; column++) {
                 int value = sudoku[row][column];
@@ -244,7 +230,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {   //this is what happens when the app closes TODO: an Sudoku anpassen
+    protected void onSaveInstanceState(@NonNull Bundle outState) {   //this is what happens when the app closes TODO: an Sudoku anpassen
         super.onSaveInstanceState(outState);
         outState.putInt("roundCount", roundCount);
         //outState.putInt("player1Points", player1Points);
@@ -261,12 +247,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 }
 /*
-TODO: Buttons (9x9) anpassen
-TODO: Zahlen in jeweils 3 Arrays speichern (Row + Column + 3x3 Area)
-TODO: doppelte Zahlen markieren
-TODO: Sudoku Test (einfach dank Arrays)
+DONE: Buttons (9x9) anpassen
+DONE: Zahlen in jeweils 3 Arrays speichern (Row + Column + 3x3 Area)
+DONE: doppelte Zahlen markieren
+DONE: Sudoku Test (einfach dank Arrays)
+TODO: Sudoku Generator
+TODO: save und reload implementieren
 TODO: schick machen (optional)
-TODO: Sudoku Generator (optional)
 TODO: Sudokus erstellen und teilen (optional)
 TODO: Hilfe (optional)
  */
