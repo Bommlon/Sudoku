@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private final int[][] columns = new int[9][9];
     private final int[][] blocks = new int[9][9];
     private int selectedNum;
-    private int roundCount; // number of games won
+    private int roundCount = 0; // number of games won
     /*
     Block IDs:
      0 | 1 | 2      012
@@ -42,6 +42,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(savedInstanceState != null){
+            roundCount = savedInstanceState.getInt("roundCount");
+        }
+
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 String buttonID = "button_" + i + j;
@@ -203,6 +208,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         System.out.println("\n============= RESET =============\n\n");
+        Toast.makeText(this, Integer.toString(roundCount++), Toast.LENGTH_LONG).show();
         generateSudoku();
     }
 
@@ -227,40 +233,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {   //this is what happens when the app closes
-        super.onSaveInstanceState(outState);
-        outState.putInt("roundCount", roundCount);
-        outState.putIntArray("row0", rows[0]);
-        outState.putIntArray("row1", rows[1]);
-        outState.putIntArray("row2", rows[2]);
-        outState.putIntArray("row3", rows[3]);
-        outState.putIntArray("row4", rows[4]);
-        outState.putIntArray("row5", rows[5]);
-        outState.putIntArray("row6", rows[6]);
-        outState.putIntArray("row7", rows[7]);
-        outState.putIntArray("row8", rows[8]);
-        System.out.println("saved");
-    }
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {  //this is what happens when the app opens
-        super.onRestoreInstanceState(savedInstanceState);
-        roundCount = savedInstanceState.getInt("roundCount");
-        rows[0] = savedInstanceState.getIntArray("row0");
-        rows[1] = savedInstanceState.getIntArray("row1");
-        rows[2] = savedInstanceState.getIntArray("row2");
-        rows[3] = savedInstanceState.getIntArray("row3");
-        rows[4] = savedInstanceState.getIntArray("row4");
-        rows[5] = savedInstanceState.getIntArray("row5");
-        rows[6] = savedInstanceState.getIntArray("row6");
-        rows[7] = savedInstanceState.getIntArray("row7");
-        rows[8] = savedInstanceState.getIntArray("row8");
+    /*
+    private void saveSudoku(){
+        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                placeNum(rows[i][j], i, j);
+                String key = Integer.toString(i) + Integer.toString(j);
+                editor.putInt(key, rows[i][j]);
             }
         }
-        System.out.println("reloaded");
+        editor.commit();
+    }
+     */
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("roundCount", roundCount);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        roundCount = savedInstanceState.getInt("roundCount");
     }
 }
 /*
