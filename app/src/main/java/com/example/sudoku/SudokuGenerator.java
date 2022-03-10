@@ -17,8 +17,8 @@ public class SudokuGenerator {
         obj = new BufferedReader(new InputStreamReader(System.in));
     }
 
-    public static int[][] generate(int[][] b) {
-        a = b;
+    public static int[][] generate(int useless) {
+        a = new int[9][9];
         int k = 1, n = 1;
         for (int i = 0; i < 9; i++) {
             k = n;

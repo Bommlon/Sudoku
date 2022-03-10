@@ -1,5 +1,7 @@
 package com.example.sudoku;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -213,7 +215,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void generateSudoku(){
-        int[][] sudoku = SudokuGenerator2.generate(1);  //1-3; 1->default; 0->debug
+        int[][] sudoku = SudokuGenerator.generate(1);  //1-3; 1->default; 0->debug
         for (int row = 0; row < 9; row++) {
             for (int column = 0; column < 9; column++) {
                 int value = sudoku[row][column];
@@ -232,7 +234,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    /*
     private void saveSudoku(){
         SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -244,7 +245,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         editor.commit();
     }
-     */
+
+    private void loadSudoku(){
+        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                String key = Integer.toString(i) + Integer.toString(j);
+                //String name = sharedPreferences.getString("name", null);
+            }
+        }
+    }
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
