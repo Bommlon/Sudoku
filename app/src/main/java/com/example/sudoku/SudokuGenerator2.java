@@ -14,9 +14,9 @@ public class SudokuGenerator2 {
         this.difficulty = d;
     }
 
-    public int[][] generate(int difficulty){
+    public static int[][] generate(int difficulty){
         SudokuGenerator2 sudoku = new SudokuGenerator2(difficulty);
-        sudoku.grid = eraseGrid(shuffleGrid(fillGrid(sudoku.grid)), difficulty);
+        sudoku.grid = sudoku.eraseGrid(sudoku.shuffleGrid(sudoku.fillGrid(sudoku.grid)), difficulty);
         return sudoku.grid;
     }
 
@@ -86,9 +86,9 @@ public class SudokuGenerator2 {
                         r2=((int)(Math.random()*3)*3-2);  // they are the starting rows/columns of the group
                         for(int j=0; j<9;j++){
                             for(int k=0;k<3; k++){
-                                storage[k][j]=g[r1+k][j];
-                                g[r1+k][j]=g[r2+k][j];
-                                g[r2+k][j]=storage[k][j];
+                                storage[k][j]=g[r1+k-1][j];
+                                g[r1+k-1][j]=g[r2+k-1][j];
+                                g[r2+k-1][j]=storage[k][j];
                             }
                         }
                     }
@@ -100,9 +100,9 @@ public class SudokuGenerator2 {
                         r2=((int)(Math.random()*3)*3-2);
                         for(int j=0; j<9;j++){
                             for(int k=0;k<3; k++){
-                                storage[k][j]=g[j][r1+k];
-                                g[j][r1+k]=g[j][r2+k];
-                                g[j][r2+k]=storage[k][j];
+                                storage[k][j]=g[j][r1+k-1];
+                                g[j][r1+k-1]=g[j][r2+k-1];
+                                g[j][r2+k-1]=storage[k][j];
                             }
                         }
                     }

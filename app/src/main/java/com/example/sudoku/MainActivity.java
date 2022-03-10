@@ -213,8 +213,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void generateSudoku(){
-        int[][] sudoku = new int[9][9];
-        sudoku = SudokuGenerator.generate(sudoku);
+        int[][] sudoku = SudokuGenerator2.generate(1);  //1-3; 1->default; 0->debug
         for (int row = 0; row < 9; row++) {
             for (int column = 0; column < 9; column++) {
                 int value = sudoku[row][column];
