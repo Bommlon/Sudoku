@@ -14,6 +14,12 @@ public class SudokuGenerator2 {
         this.difficulty = d;
     }
 
+    public int[][] generate(int difficulty){
+        SudokuGenerator2 sudoku = new SudokuGenerator2(difficulty);
+        sudoku.grid = eraseGrid(shuffleGrid(fillGrid(sudoku.grid)), difficulty);
+        return sudoku.grid;
+    }
+
     // method to fill the grid with values
     public int[][] fillGrid(int[][] g){
         int num =0;
@@ -119,10 +125,10 @@ public class SudokuGenerator2 {
             case 0:
                 d=5;
                 break;
-            case 1:
+            case 2:
                 d=((int)((Math.random()*5+1)+50));   // 51-55 = intermediate
                 break;
-            case 2:
+            case 3:
                 d=((int)((Math.random()*5+1)+55));   // 56-60 = difficult
                 break;
             default:
