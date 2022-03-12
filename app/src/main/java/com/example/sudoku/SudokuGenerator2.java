@@ -1,6 +1,6 @@
 package com.example.sudoku;
 
-public class SudokuGenerator2 {
+public class SudokuGenerator2{
     int[][] grid;
     int difficulty;
 
@@ -9,7 +9,7 @@ public class SudokuGenerator2 {
         this(0);
     }
 
-    public SudokuGenerator2(int d) /* throws IOException */ {
+    public SudokuGenerator2(int d){
         this.grid = new int[9][9];
         this.difficulty = d;
     }
@@ -22,8 +22,8 @@ public class SudokuGenerator2 {
 
     // method to fill the grid with values
     public int[][] fillGrid(int[][] g){
-        int num =0;
-        int nextRow =4;             // difference between the last number of a row and the first number of the next row is always 4
+        int num =0;                 // input number for field
+        int nextRow =3;             // difference between the last number of a row and the first number of the next row is always 4
         int nextRowCounter =0;
         for(int i=0;i<9;i++){
             for(int j=0;j<9;j++){
@@ -45,7 +45,7 @@ public class SudokuGenerator2 {
         /*  shuffle options:
             change rows,    change groups of rows
             change columns, change groups of columns */
-        int[][] storage = {{0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0}};
+        int[][] storage = new int[3][9];
         boolean[] shuffled ={false, false, false, false};
         int randomShuffle =0;   // chooses a shuffle option
         int ra=0;               // random amount of
@@ -56,15 +56,13 @@ public class SudokuGenerator2 {
             randomShuffle = (int)(Math.random()*4+1);
             switch(randomShuffle){
                 case 1: // change rows
-                    ra=(int)(Math.random()*9+1);
+                    ra=(int)(Math.random()*9+1);    // how often to change a row
                     for(int i=0; i<=ra;i++){
                         r1=(int)(Math.random()*9);  // selected row 1
                         r2=(int)(Math.random()*9);  // selected row 2
-                        for(int j=0; j<9;j++){      // changing positions
-                            storage[0][j]=g[r1][j];
-                            g[r1][j]=g[r2][j];
-                            g[r2][j]=storage[0][j];
-                        }
+                        storage[0]=g[r1];
+                        g[r1]=g[r2];
+                        g[r2]=storage[0];
                     }
                     break;
                 case 2: // change columns
@@ -82,27 +80,25 @@ public class SudokuGenerator2 {
                 case 3: // change groups of rows
                     ra=(int)(Math.random()*3+1);
                     for(int i=0; i<=ra;i++){
-                        r1=((int)(Math.random()*3)*3-2);  // r1,r2 output possibilities: {1,4,7}
-                        r2=((int)(Math.random()*3)*3-2);  // they are the starting rows/columns of the group
-                        for(int j=0; j<9;j++){
-                            for(int k=0;k<3; k++){
-                                storage[k][j]=g[r1+k-1][j];
-                                g[r1+k-1][j]=g[r2+k-1][j];
-                                g[r2+k-1][j]=storage[k][j];
-                            }
+                        r1=(((int)(Math.random()*3+1))*3-3);  // r1,r2 output possibilities: {1,4,7}
+                        r2=(((int)(Math.random()*3+1))*3-3);  // they are the starting rows/columns of the group
+                        for(int k=0;k<3; k++){
+                            storage[k]=g[r1+k];
+                            g[r1+k]=g[r2+k];
+                            g[r2+k]=storage[k];
                         }
                     }
                     break;
                 case 4: // change groups of columns
                     ra=(int)(Math.random()*3+1);
                     for(int i=0; i<=ra;i++){
-                        r1=((int)(Math.random()*3)*3-2);
-                        r2=((int)(Math.random()*3)*3-2);
+                        r1=(((int)(Math.random()*3+1))*3-3);
+                        r2=(((int)(Math.random()*3+1))*3-3);
                         for(int j=0; j<9;j++){
                             for(int k=0;k<3; k++){
-                                storage[k][j]=g[j][r1+k-1];
-                                g[j][r1+k-1]=g[j][r2+k-1];
-                                g[j][r2+k-1]=storage[k][j];
+                                storage[k][j]=g[j][r1+k];
+                                g[j][r1+k]=g[j][r2+k];
+                                g[j][r2+k]=storage[k][j];
                             }
                         }
                     }
@@ -110,7 +106,20 @@ public class SudokuGenerator2 {
                 default:
                     break;
             }
+            /* for debug
+            int output=0;
+            for(int a=0; a<9; a++){
+                for(int b=0; b<9; b++){
+                    output*=10;
+                    output += grid[b][a];
+                }
+                System.out.println(output);
+                output=0;
+            }
+            System.out.println();
+            System.out.println("war randomshuffle: "+randomShuffle+"\n");
             shuffled[randomShuffle-1]=true;
+            */
             rc--;
         }
         return g;
