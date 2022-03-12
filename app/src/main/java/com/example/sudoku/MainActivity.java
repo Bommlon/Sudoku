@@ -69,16 +69,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             selectedNum = Integer.parseInt(radioButton.getText().toString());
             System.out.println(selectedNum);
         });
-        /*
-        // change height of grid
-        LinearLayout linearLayout = findViewById(R.id.linear_00);
-        ViewGroup.LayoutParams linearParams = linearLayout.getLayoutParams();
-        ViewGroup.LayoutParams radioParams = radioGroup.getLayoutParams();
-        int screenWidth = radioParams.width;
-        System.out.println("width: "+screenWidth);
-        linearParams.height = screenWidth*3;
-        linearLayout.setLayoutParams(linearParams);
-         */
         generateSudoku();
     }
     @SuppressLint("SetTextI18n")
@@ -115,11 +105,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private boolean checkForWin() {
         // check if filled
-        boolean isfilled = true;
+        boolean isFilled = true;
         int[] dupe;
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                if(buttons[i][j].getText().toString().equals("")) isfilled = false;
+                if(buttons[i][j].getText().toString().equals("")) isFilled = false;
             }
         }
         System.out.println("---------------------------------");
@@ -160,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-        if (isfilled && errorPairs.isEmpty()){
+        if (isFilled && errorPairs.isEmpty()){
             roundCount++;
             return true;
         }
@@ -172,14 +162,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         LinkedList<Integer> nums = new LinkedList<>();
         int[] res = new int[2];
         for (int i:numbers) nums.add(i);
-        int testloc = 0;
+        int testLoc = 0;
         while (nums.size() > 0){
             int test = nums.getFirst();
             nums.removeFirst();
-            testloc++;
+            testLoc++;
             if (nums.contains(test) && (test > 0)){
-                res[0] = testloc - 1;
-                res[1] = testloc + nums.indexOf(test);
+                res[0] = testLoc - 1;
+                res[1] = testLoc + nums.indexOf(test);
                 return res;
             }
         }
@@ -285,13 +275,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 }
 /*
-DONE: Buttons (9x9) anpassen
-DONE: Zahlen in jeweils 3 Arrays speichern (Row + Column + 3x3 Area)
-DONE: doppelte Zahlen markieren
-DONE: Sudoku Test (einfach dank Arrays)
-TODO: Sudoku Generator
-TODO: save und reload an Sudoku anpassen
-TODO: schick machen (optional)
-TODO: Sudokus erstellen und teilen (optional)
-TODO: Hilfe (optional)
+DONE: adjust Buttons (9x9)
+DONE: save numbers in 3 arrays each (Row + Column + 3x3 Area)
+DONE: mark duplicate numbers
+DONE: Sudoku test (simple thanks to arrays)
+TODO: Sudoku generator
+given up: implement save and reload
+TODO: make look nice (optional)
+TODO: create and share Sudokus (optional)
+TODO: Help (optional)
  */
