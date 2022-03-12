@@ -1,5 +1,6 @@
 package com.example.sudoku;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -24,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private final int[][] rows = new int[9][9];
     private final int[][] columns = new int[9][9];
     private final int[][] blocks = new int[9][9];
-    private boolean saved = false;
     private int selectedNum;
     private int roundCount = 0; // number of games won
     /*
@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          */
         generateSudoku();
     }
+    @SuppressLint("SetTextI18n")
     @Override
     public void onClick(View v) {
         ((Button) v).setText(Integer.toString(selectedNum));
@@ -240,12 +241,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences.Editor editor = sharedPreferences.edit();
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                String key = Integer.toString(i) + Integer.toString(j);
+                String key = i + Integer.toString(j);
                 editor.putInt(key, rows[i][j]);
             }
         }
-        editor.commit();
-        saved = true;
+        editor.apply();
         System.out.println("saved");
     }
 
@@ -253,7 +253,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                String key = Integer.toString(i) + Integer.toString(j);
+                String key = i + Integer.toString(j);
                 placeNum(sharedPreferences.getInt(key, 0), i, j);
             }
         }
