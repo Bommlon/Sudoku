@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private final int[][] blocks = new int[9][9];
     private int selectedNum;
     private int roundCount = 0; // number of games won
+    private int difficulty = 1; // 0/1/2/3 debug/easy/normal/hard
     /*
     Block IDs:
      0 | 1 | 2      012
@@ -82,9 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int columnNum = name.charAt(8) - '0';
         int value = Integer.parseInt(((Button) v).getText().toString());
         placeNum(value, rowNum, columnNum);
-        if (checkForWin()) {
-            playerWins();
-        }
+        if (checkForWin()) playerWins();
     }
 
     private void placeNum(int value, int rowNum, int columnNum){
@@ -152,10 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-        if (isFilled && errorPairs.isEmpty()){
-            roundCount++;
-            return true;
-        }
+        if (isFilled && errorPairs.isEmpty()) return true;
         markErrors();
         return false;
     }
@@ -191,6 +187,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void playerWins() {
         Toast.makeText(this, "nice work!", Toast.LENGTH_LONG).show();
+        roundCount++;
+        difficulty++;
+        if(difficulty > 3) difficulty = 3;
         resetBoard();
     }
 
@@ -204,12 +203,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         System.out.println("\n============= RESET =============\n\n");
-        Toast.makeText(this, Integer.toString(roundCount++), Toast.LENGTH_LONG).show();
+        difficulty--;
+        if(difficulty <= 0) difficulty = 1;
         generateSudoku();
     }
 
     private void generateSudoku(){
-        int[][] sudoku = SudokuGenerator2.generate(1);  //1-3; 1->default; 0->debug
+        int[][] sudoku = SudokuGenerator2.generate(difficulty);  //1-3; 1->default; 0->debug
         for (int row = 0; row < 9; row++) {
             for (int column = 0; column < 9; column++) {
                 int value = sudoku[row][column];
@@ -226,6 +226,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
+
+        //Toast
+        String out = Integer.toString(difficulty);
+        switch (difficulty){
+            case 0: out = "debug";
+            break;
+            case 1: out = "easy";
+            break;
+            case 2: out = "normal";
+            break;
+            case 3: out = "hard";
+        }
+        Toast.makeText(this, out, Toast.LENGTH_LONG).show();
     }
     /*
     private void saveSudoku(){
