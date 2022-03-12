@@ -51,25 +51,28 @@ public class SudokuGenerator2{
         int ra=0;               // random amount of
         int r1=0;               // random pointer1
         int r2=0;               // random pointer2
+        int bs=0;               // block-strips (rows or columns)
         int rc=10;              // reverse counter (infinite loop protection)
         while((!shuffled[0] || !shuffled[1] || !shuffled[2] || !shuffled[3]) && (rc>0)){ // while all not used once OR 10 times
             randomShuffle = (int)(Math.random()*4+1);
             switch(randomShuffle){
                 case 1: // change rows
-                    ra=(int)(Math.random()*9+1);    // how often to change a row
+                    bs=(((int)(Math.random()*3))*3);        // output possibilities: {0,3,6}
+                    ra=(int)(Math.random()*2+1);            // how often to change a row (1 or 2 times)
                     for(int i=0; i<=ra;i++){
-                        r1=(int)(Math.random()*9);  // selected row 1
-                        r2=(int)(Math.random()*9);  // selected row 2
+                        r1=bs+(int)(Math.random()*3);       // selected row 1  {0,1,2 or 3,4,5 or 6,7,8}
+                        r2=bs+(int)(Math.random()*3);       // selected row 2  {0,1,2 or 3,4,5 or 6,7,8} (same triplet as r1)
                         storage[0]=g[r1];
                         g[r1]=g[r2];
                         g[r2]=storage[0];
                     }
                     break;
                 case 2: // change columns
-                    ra=(int)(Math.random()*9+1);
+                    bs=(((int)(Math.random()*3))*3);        // output possibilities: {0,3,6}
+                    ra=(int)(Math.random()*2+1);            // how often to change a row (1 or 2 times)
                     for(int i=0; i<=ra;i++){
-                        r1=(int)(Math.random()*9);  // select column 1
-                        r2=(int)(Math.random()*9);  // select column 2
+                        r1=bs+(int)(Math.random()*3);       // select column 1  {0,1,2 or 3,4,5 or 6,7,8}
+                        r2=bs+(int)(Math.random()*3);       // select column 2  {0,1,2 or 3,4,5 or 6,7,8} (same triplet as r1)
                         for(int j=0; j<9;j++){
                             storage[0][j]=g[j][r1];
                             g[j][r1]=g[j][r2];
