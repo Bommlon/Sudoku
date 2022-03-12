@@ -45,63 +45,69 @@ public class SudokuGenerator2{
         /*  shuffle options:
             change rows,    change groups of rows
             change columns, change groups of columns */
-        int[][] storage = new int[3][9];
-        boolean[] shuffled ={false, false, false, false};
         int randomShuffle =0;   // chooses a shuffle option
         int ra=0;               // random amount of
         int r1=0;               // random pointer1
         int r2=0;               // random pointer2
         int bs=0;               // block-strips (rows or columns)
-        int rc=10;              // reverse counter (infinite loop protection)
-        while((!shuffled[0] || !shuffled[1] || !shuffled[2] || !shuffled[3]) && (rc>0)){ // while all not used once OR 10 times
-            randomShuffle = (int)(Math.random()*4+1);
+        for(int c=0; c<10; c++){
+            int[][] storage = new int[3][9];
+            randomShuffle =(int)(Math.random()*4+1);
             switch(randomShuffle){
                 case 1: // change rows
                     bs=(((int)(Math.random()*3))*3);        // output possibilities: {0,3,6}
                     ra=(int)(Math.random()*2+1);            // how often to change a row (1 or 2 times)
                     for(int i=0; i<=ra;i++){
-                        r1=bs+(int)(Math.random()*3);       // selected row 1  {0,1,2 or 3,4,5 or 6,7,8}
-                        r2=bs+(int)(Math.random()*3);       // selected row 2  {0,1,2 or 3,4,5 or 6,7,8} (same triplet as r1)
-                        storage[0]=g[r1];
-                        g[r1]=g[r2];
-                        g[r2]=storage[0];
+                        r1=bs+((int)(Math.random()*3));       // selected row 1  {0,1,2 or 3,4,5 or 6,7,8}
+                        r2=bs+((int)(Math.random()*3));       // selected row 2  {0,1,2 or 3,4,5 or 6,7,8} (same triplet as r1)
+                        if(r1!=r2) {
+                            storage[0] = g[r1];
+                            g[r1] = g[r2];
+                            g[r2] = storage[0];
+                        }
                     }
                     break;
                 case 2: // change columns
                     bs=(((int)(Math.random()*3))*3);        // output possibilities: {0,3,6}
                     ra=(int)(Math.random()*2+1);            // how often to change a row (1 or 2 times)
                     for(int i=0; i<=ra;i++){
-                        r1=bs+(int)(Math.random()*3);       // select column 1  {0,1,2 or 3,4,5 or 6,7,8}
-                        r2=bs+(int)(Math.random()*3);       // select column 2  {0,1,2 or 3,4,5 or 6,7,8} (same triplet as r1)
-                        for(int j=0; j<9;j++){
-                            storage[0][j]=g[j][r1];
-                            g[j][r1]=g[j][r2];
-                            g[j][r2]=storage[0][j];
+                        r1=bs+((int)(Math.random()*3));       // select column 1  {0,1,2 or 3,4,5 or 6,7,8}
+                        r2=bs+((int)(Math.random()*3));       // select column 2  {0,1,2 or 3,4,5 or 6,7,8} (same triplet as r1)
+                        if(r1!=r2){
+                            for(int j=0; j<9;j++){
+                                storage[0][j]=g[j][r1];
+                                g[j][r1]=g[j][r2];
+                                g[j][r2]=storage[0][j];
+                            }
                         }
                     }
                     break;
                 case 3: // change groups of rows
-                    ra=(int)(Math.random()*3+1);
+                    ra=(int)(Math.random()*2+1);
                     for(int i=0; i<=ra;i++){
-                        r1=(((int)(Math.random()*3+1))*3-3);  // r1,r2 output possibilities: {1,4,7}
-                        r2=(((int)(Math.random()*3+1))*3-3);  // they are the starting rows/columns of the group
-                        for(int k=0;k<3; k++){
-                            storage[k]=g[r1+k];
-                            g[r1+k]=g[r2+k];
-                            g[r2+k]=storage[k];
+                        r1=(((int)(Math.random()*3))*3);  // r1,r2 output possibilities: {0,3,6}
+                        r2=(((int)(Math.random()*3))*3);  // they are the starting rows/columns of the group
+                        if(r1!=r2){
+                            for(int k=0;k<3; k++){
+                                storage[k]=g[r1+k];
+                                g[r1+k]=g[r2+k];
+                                g[r2+k]=storage[k];
+                            }
                         }
                     }
                     break;
                 case 4: // change groups of columns
-                    ra=(int)(Math.random()*3+1);
+                    ra=(int)(Math.random()*2+1);
                     for(int i=0; i<=ra;i++){
-                        r1=(((int)(Math.random()*3+1))*3-3);
-                        r2=(((int)(Math.random()*3+1))*3-3);
-                        for(int j=0; j<9;j++){
-                            for(int k=0;k<3; k++){
-                                storage[k][j]=g[j][r1+k];
-                                g[j][r1+k]=g[j][r2+k];
-                                g[j][r2+k]=storage[k][j];
+                        r1=(((int)(Math.random()*3))*3);
+                        r2=(((int)(Math.random()*3))*3);
+                        if(r1!=r2){
+                            for(int j=0; j<9;j++){
+                                for(int k=0;k<3; k++){
+                                    storage[k][j]=g[j][r1+k];
+                                    g[j][r1+k]=g[j][r2+k];
+                                    g[j][r2+k]=storage[k][j];
+                                }
                             }
                         }
                     }
@@ -109,21 +115,6 @@ public class SudokuGenerator2{
                 default:
                     break;
             }
-            /* for debug
-            int output=0;
-            for(int a=0; a<9; a++){
-                for(int b=0; b<9; b++){
-                    output*=10;
-                    output += grid[b][a];
-                }
-                System.out.println(output);
-                output=0;
-            }
-            System.out.println();
-            System.out.println("war randomshuffle: "+randomShuffle+"\n");
-            shuffled[randomShuffle-1]=true;
-            */
-            rc--;
         }
         return g;
     }
