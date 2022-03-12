@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private final int[][] rows = new int[9][9];
     private final int[][] columns = new int[9][9];
     private final int[][] blocks = new int[9][9];
+    private boolean saved = false;
     private int selectedNum;
     private int roundCount = 0; // number of games won
     /*
@@ -235,7 +236,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void saveSudoku(){
-        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
@@ -244,16 +245,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         editor.commit();
+        saved = true;
+        System.out.println("saved");
     }
 
     private void loadSudoku(){
-        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 String key = Integer.toString(i) + Integer.toString(j);
-                //String name = sharedPreferences.getString("name", null);
+                placeNum(sharedPreferences.getInt(key, 0), i, j);
             }
         }
+        System.out.println("reloaded");
     }
 
     @Override
@@ -266,6 +270,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         roundCount = savedInstanceState.getInt("roundCount");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        loadSudoku();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        saveSudoku();
     }
 }
 /*
