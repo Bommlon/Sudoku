@@ -46,9 +46,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*
         if(savedInstanceState != null){
             roundCount = savedInstanceState.getInt("roundCount");
         }
+        */
 
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
         generateSudoku();
     }
-    @SuppressLint("SetTextI18n")
+
     @Override
     public void onClick(View v) {
         ((Button) v).setText(Integer.toString(selectedNum));
@@ -207,7 +209,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void generateSudoku(){
-        int[][] sudoku = SudokuGenerator.generate(1);  //1-3; 1->default; 0->debug
+        int[][] sudoku = SudokuGenerator2.generate(1);  //1-3; 1->default; 0->debug
         for (int row = 0; row < 9; row++) {
             for (int column = 0; column < 9; column++) {
                 int value = sudoku[row][column];
@@ -225,7 +227,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     }
-
+    /*
     private void saveSudoku(){
         SharedPreferences sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -249,6 +251,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         System.out.println("reloaded");
     }
+     */
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
@@ -261,7 +264,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onRestoreInstanceState(savedInstanceState);
         roundCount = savedInstanceState.getInt("roundCount");
     }
-
+    /*
     @Override
     protected void onStart() {
         super.onStart();
@@ -273,6 +276,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStop();
         saveSudoku();
     }
+     */
 }
 /*
 DONE: adjust Buttons (9x9)
