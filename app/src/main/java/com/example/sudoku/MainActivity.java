@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,12 +22,13 @@ import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private final Button[][] buttons = new Button[9][9];
+    private TextView textView;
     private final HashMap<Button,Button> errorPairs = new HashMap<>();
     private final int[][] rows = new int[9][9];
     private final int[][] columns = new int[9][9];
     private final int[][] blocks = new int[9][9];
     private int selectedNum;
-    private int roundCount = 0; // number of games won
+    private int roundCount = 1; // number of games won
     private int difficulty = 1; // 0/1/2/3 debug/easy/normal/hard
     /*
     Block IDs:
@@ -46,7 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        textView = (TextView) findViewById(R.id.text_view_s1);
+        textView.setText("Round " + roundCount + " " + printDifficulty());
         /*
         if(savedInstanceState != null){
             roundCount = savedInstanceState.getInt("roundCount");
@@ -110,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int[] dupe;
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                if(buttons[i][j].getText().toString().equals("")) isFilled = false;
+                if(buttons[i][j].getText().length() < 1) isFilled = false;
             }
         }
         System.out.println("---------------------------------");
@@ -150,7 +153,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 errorPairs.put(buttons[rowErr0][colErr0], buttons[rowErr1][colErr1]);
             }
         }
-
         if (isFilled && errorPairs.isEmpty()) return true;
         markErrors();
         return false;
@@ -186,11 +188,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void playerWins() {
-        Toast.makeText(this, "nice work!", Toast.LENGTH_LONG).show();
+        System.out.println("\n============= PLAYER WINS =============\n\n");
         roundCount++;
         difficulty++;
         if(difficulty > 3) difficulty = 3;
         resetBoard();
+        Toast.makeText(this, "nice work!", Toast.LENGTH_LONG).show();
     }
 
     private void resetBoard() {
@@ -205,6 +208,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         System.out.println("\n============= RESET =============\n\n");
         difficulty--;
         if(difficulty <= 0) difficulty = 1;
+        textView.setText("Round " + roundCount + " " + printDifficulty());
         generateSudoku();
     }
 
@@ -226,20 +230,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
-
-        //Toast
-        String out = Integer.toString(difficulty);
-        switch (difficulty){
-            case 0: out = "debug";
-            break;
-            case 1: out = "easy";
-            break;
-            case 2: out = "normal";
-            break;
-            case 3: out = "hard";
-        }
-        Toast.makeText(this, out, Toast.LENGTH_LONG).show();
     }
+
+    private String printDifficulty(){
+        switch (difficulty){
+            case 0: return "debug";
+            case 1: return "easy";
+            case 2: return "normal";
+            case 3: return "hard";
+            default: return ""+difficulty;
+        }
+    }
+
     /*
     private void saveSudoku(){
         SharedPreferences sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
