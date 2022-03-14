@@ -201,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             for (int j = 0; j < 9; j++) {
                 buttons[i][j].setClickable(true);
                 buttons[i][j].setTextColor(Color.BLACK);
-                buttons[i][j].setTextSize(15);
+                //buttons[i][j].setTextSize(15);
                 buttons[i][j].setTypeface(buttons[i][j].getTypeface(), Typeface.NORMAL);
             }
         }
@@ -226,7 +226,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 else {
                     buttons[row][column].setClickable(false);
                     buttons[row][column].setTypeface(buttons[row][column].getTypeface(), Typeface.BOLD);
-                    buttons[row][column].setTextSize(19);
+                    //buttons[row][column].setTextSize(19);
                 }
             }
         }
